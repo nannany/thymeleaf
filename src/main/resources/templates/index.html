@@ -11,7 +11,8 @@
 
 <body>
 
-<p th:text="#{home.welcome}">Welcome to our grocery store!</p>
+<p th:text="${test}">Welcome to our grocery store!</p>
+<p th:text=${@environment.getProperty('thymeleaf.test')}>Welcome to our grocery store!</p>
 
 </body>
 
