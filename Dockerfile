@@ -11,7 +11,7 @@ ADD thymeleaf .
 RUN mkdir -p /work2/thymeleaf/src/main/resources/static
 COPY --from=front-build /work1/build/ /work2/thymeleaf/src/main/resources/static/
 RUN mkdir -p /work2/thymeleaf/src/main/resources/templates && \
-      sed -e "s!<meta name=\"from-environment\" content=\"\"/>!<meta name=\"from-environment\" th:content=\${@environment.getProperty('thymeleaf.test')}/>!" \
+      sed -e "s!<meta name=\"from-environment\" content=\"\"/>!<meta name=\"from-environment\" th:content=\${@environment.getProperty('thymeleaf.test')}>!" \
         /work2/thymeleaf/src/main/resources/static/index.html > /work2/thymeleaf/src/main/resources/templates/index.html && \
       rm /work2/thymeleaf/src/main/resources/static/index.html && \
       mvn package

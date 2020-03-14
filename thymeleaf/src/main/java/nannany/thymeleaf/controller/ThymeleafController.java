@@ -10,9 +10,7 @@ public class ThymeleafController {
     @GetMapping("/app")
     public String home(Model model) {
 
-        model.addAttribute("test", "lll");
-
-        return "/index.html";
+        return "index";
 
     }
 }
